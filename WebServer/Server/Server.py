@@ -5,7 +5,8 @@ import os
 import sys
 import time
 import random
-from flask import Flask, jsonify
+import asyncio
+from aiohttp import web
 
 #Globals
 WebServerRunning = False
@@ -23,40 +24,59 @@ tempDb = [
     },
 ]
 
-#Serves up the build folder (complied react project)
-def LaunchWebServer():
-    try:
-        print("Launching Web Server")
-        PORT = 5001
-        currentDirectory = os.getcwd()
-        webDirectory = os.path.join(currentDirectory, 'WebServer/Web/scripts/site/build')
-        os.chdir(webDirectory)
-        Handler = http.server.SimpleHTTPRequestHandler
-        httpd = socketserver.TCPServer(("", PORT), Handler)
-        print("Success! Serving Site at port : ", PORT)
-        httpd.serve_forever()
-    except:
-        print("Failure! Exiting thread")
-        return False
-
 #Serves up REST endpoints
 def LaunchRestServer():
     try:
         print("Launching REST Server")
-
-        app = Flask(__name__)
-
-        @app.route('/test',  methods=['GET'])
-        def getTempDb():
-            return jsonify({'tempDb': tempDb})
-
-        @app.route('/random',  methods=['GET'])
-        def getRandomNumber():
-            rand = random.randint(1,101)
-            return jsonify({'RandomNum': rand})
         
-        app.run(debug=True, use_reloader=False)
+        currentDirectory = os.getcwd()
+        reactBuildLocation = currentDirectory + '/WebServer/Web/scripts/site/build/'
+        #Static Content Functions
+        def getHomePage(request):
+            return web.FileResponse(reactBuildLocation +'index.html')
+        def getJsServiceWorker(request):
+            return web.FileResponse(reactBuildLocation +'service-worker.js')
+        def getJs(request):
+            jsFilePath = reactBuildLocation + '/static/js/{}'.format(request.match_info['jsFileName'])
+            return web.FileResponse(jsFilePath)
+        def getCss(request):
+            cssFilePath = reactBuildLocation + '/static/css/{}'.format(request.match_info['cssFileName'])
+            return web.FileResponse(cssFilePath)
+        def getMedia(request):
+            mediaFilePath = reactBuildLocation + '/static/media/{}'.format(request.match_info['mediaFileName'])
+            return web.FileResponse(mediaFilePath)
 
+        #Rest Content Functions
+        def getRandomNumber(request):
+            return web.json_response(random.randint(1,100))
+
+        app = web.Application()
+        #Static Content Routing
+        app.router.add_route('GET', '/', getHomePage)
+        app.router.add_route('GET', '/service-worker.js', getJsServiceWorker)
+        app.router.add_route('*', '/static/css/{cssFileName}', getCss)
+        app.router.add_route('*', '/static/js/{jsFileName}', getJs)
+        app.router.add_route('*', '/static/media/{mediaFileName}', getRandomNumber)
+
+        #Rest Content
+        app.router.add_route('GET', '/rand', getRandomNumber)
+
+        print('5')
+        loop = asyncio.get_event_loop()
+        print('6')
+        handler = app.make_handler()
+        f = loop.create_server(handler, '0.0.0.0', 8080)
+        srv = loop.run_until_complete(f)
+        print('serving on', srv.sockets[0].getsockname())
+        try:
+            loop.run_forever()
+        except KeyboardInterrupt:
+            pass
+        finally:
+            srv.close()
+            loop.run_until_complete(srv.wait_closed())
+            loop.run_until_complete(app.finish())
+        loop.close()
 
         return True
     except:
@@ -64,13 +84,7 @@ def LaunchRestServer():
 
 #Main
 if __name__ == '__main__':
-    tup = ()
-    while Run:
-        if WebServerRunning is False:
-            WebServerRunning = _thread.start_new_thread(LaunchWebServer, tup)
-            time.sleep(2)
-        if RestServerRunning is False:
-            RestServerRunning = _thread.start_new_thread(LaunchRestServer, tup)
-        time.sleep(5)
+    RestServerRunning = LaunchRestServer()
+    
 
 
