@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import piLogo from './images/piLogoSmall.png';
-import pythonLogo from './images/pythonLogoSmall.png';
-import request from 'superagent/request';
+import pythonLogo from './images/PythonLogoSmall.png';
+import axios from 'axios'
 
 import './App.css';
 
@@ -10,40 +10,89 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={pythonLogo} className="logo" alt="logo" />
-          <img src={logo} className="App-logo" alt="logo" />
-          <img src={piLogo} className="logo" alt="logo" />
-          <h1 className="App-title">Welcome to Michael Scuteri's Website</h1>
-        </header>
-        <p className="App-intro">
-          This is a test website, built to test the performance limits of a python http/rest server running on a rasberry pi 3.
-
-        </p>
+        <div>
+          <header className="App-header">
+            <img src={pythonLogo} className="logo" alt="logo" />
+            <img src={logo} className="App-logo" alt="logo" />
+            <img src={piLogo} className="logo" alt="logo" />
+            <h1 className="App-title">Welcome to Michael Scuteri's Website</h1>
+          </header>
+          <p className="App-intro">
+            This is a test website, built to test python's "pickler" I/O performance limits when hosted on a rasberry pi 3.
+          </p>
+        </div>
+        <div>
+          <DisplayRegistrations/>
+        </div>
       </div>
     );
   }
 }
 
-class RestTest extends React.Component {
+class DisplayRegistrations extends React.Component {  
   constructor(props) {
     super(props);
-    this.state = {randomNumber: 0}
+    var hostUri = window.location.host; 
+    var localTest = false;
+    if(localTest) {
+      hostUri = 'http://localhost:8080'
+    }
+    this.state = {
+      registrations: '',
+      registrationsHtml: '',
+      hostUrl: hostUri
+    };
 
-    this.handleClick = this.handleClick.bind(this);
+    
+    console.log(this.state.hostUrl)
+    axios.get(this.state.hostUrl + '/data/registrations')
+    .then(response => {
+      this.setState({registrations: response})
+      var registrationsArr = [];
+      Object.keys(this.state.registrations).forEach(function(key) {
+        registrationsArr.push(this.state.registrations[key]);
+      });
+      var rowsArray = []
+      for (var i = 0; i < registrationsArr.length; i++) {
+        rowsArray.push(this.renderRow(i, registrationsArr[i].Name, registrationsArr[i].emailAddress));
+      }
+      this.setState({registrationsHtml: rowsArray})
+     })
+ 
+     
+    this.handleDelete = this.handleDelete.bind(this);
   }
 
-  handleClick() {
-    this.setState(state => ({
-      isToggleOn: !state.isToggleOn
-    }));
+  handleDelete() {
+
   }
+  handleAddition() {
+
+  }
+  renderRow(i, Name, emailAddress) {
+    return (
+      <tr>
+        <td>{i+1}</td>
+        <td>{Name}</td>
+        <td>{emailAddress}</td>
+        <td><button onClick={this.handleDelete}>Delete</button></td>
+      </tr>
+    )
+  }
+
 
   render() {
     return (
-      <button onClick={this.handleClick}>
-        {this.state.isToggleOn ? 'ON' : 'OFF'}
-      </button>
+      <div>
+        <table>
+          <tr>
+            <th>Company</th>
+            <th>Contact</th>
+            <th>Country</th>
+          </tr>
+           {this.registrationsHtml}
+        </table>
+      </div>
     );
   }
 }
