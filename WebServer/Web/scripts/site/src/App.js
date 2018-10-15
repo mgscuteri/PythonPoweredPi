@@ -39,24 +39,30 @@ class DisplayRegistrations extends React.Component {
     }
     this.state = {
       registrations: '',
-      registrationsHtml: '',
+      rowsArray: [],
       hostUrl: hostUri
     };
 
     
     console.log(this.state.hostUrl)
-    axios.get(this.state.hostUrl + '/data/registrations')
+    axios.get('http://' + this.state.hostUrl + '/data/registrations')
     .then(response => {
       this.setState({registrations: response})
       var registrationsArr = [];
       Object.keys(this.state.registrations).forEach(function(key) {
-        registrationsArr.push(this.state.registrations[key]);
+        registrationsArr.push(key);
       });
-      var rowsArray = []
+      console.log(rowsArray)
+      var rowsArray = [registrationsArr]
       for (var i = 0; i < registrationsArr.length; i++) {
-        rowsArray.push(this.renderRow(i, registrationsArr[i].Name, registrationsArr[i].emailAddress));
+        rowsArray.push(registrationsArr[i]);
       }
-      this.setState({registrationsHtml: rowsArray})
+      
+      this.setState({rowsArray: rowsArray});
+
+      
+      console.log(rowsArray)
+      console.log(this.state.registrationsHtml)
      })
  
      
@@ -64,33 +70,34 @@ class DisplayRegistrations extends React.Component {
   }
 
   handleDelete() {
-
+    return `temp`
   }
   handleAddition() {
-
+    return 'temp'
   }
-  renderRow(i, Name, emailAddress) {
-    return (
-      <tr>
-        <td>{i+1}</td>
-        <td>{Name}</td>
-        <td>{emailAddress}</td>
-        <td><button onClick={this.handleDelete}>Delete</button></td>
-      </tr>
-    )
-  }
-
 
   render() {
+    var handleDeleteFunc = this.handleDelete
+    var listItems = this.state.rowsArray.map(function(item, index) {
+      return (
+        <tr>
+          <td>{index+1}</td>
+          <td>{item.Name}</td>
+          <td>{item.emailAddress}</td>
+          <td><button onClick={handleDeleteFunc}>Delete</button></td>
+        </tr>
+      );
+    });
     return (
       <div>
         <table>
           <tr>
-            <th>Company</th>
-            <th>Contact</th>
-            <th>Country</th>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Delete</th>
           </tr>
-           {this.registrationsHtml}
+           {listItems}
         </table>
       </div>
     );
