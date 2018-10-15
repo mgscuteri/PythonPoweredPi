@@ -1,0 +1,5 @@
+Chrome without CORS
+chrome.exe --user-data-dir="C:/Chrome dev session" --disable-web-security
+
+launch NPM test server
+npm run start:dev
