@@ -69,8 +69,8 @@ class DisplayRegistrations extends React.Component {
     return `temp`
   }
   handleAddition(obj) {
-    name = this.state.name
-    email = this.state.email
+    var name = this.state.name
+    var email = this.state.email
     return 'temp'
   }
   handleNameChange(event) {
