@@ -7,11 +7,16 @@
   height: 80px;
 }
 
-.App {  
+.App {
   height: 80px;
 }
 
-.App-header {
+.appBody {
+  background-color: #bad5ff;
+  height: 650px;
+}
+
+.header {
   background-color: #222;
   height: 150px;
   padding: 20px;
@@ -23,6 +28,8 @@
 }
 
 .App-intro {
+  margin: 0px;
+  padding: 15px;
   font-size: large;
 }
 

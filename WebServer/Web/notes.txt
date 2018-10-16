@@ -1,5 +1,8 @@
 Chrome without CORS
 chrome.exe --user-data-dir="C:/Chrome dev session" --disable-web-security
 
+debugging python:
+https://pythonconquerstheuniverse.wordpress.com/2009/09/10/debugging-in-python/
+
 launch NPM test server
 npm run start
