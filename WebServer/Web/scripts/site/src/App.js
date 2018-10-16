@@ -32,73 +32,94 @@ class App extends Component {
 class DisplayRegistrations extends React.Component {  
   constructor(props) {
     super(props);
-    var hostUri = window.location.host; 
-    var localTest = false;
-    if(localTest) {
-      hostUri = 'http://localhost:8080'
-    }
+    var environmentVariables = {}
+    environmentVariables.dataUrl = ''
+    
+    environmentVariables.dataUrl = 'http://' + window.location.host + '/data/registrations'
+    
     this.state = {
       registrations: '',
       rowsArray: [],
-      hostUrl: hostUri
+      name: 'name',
+      email: 'email',
+      environmentVariables: environmentVariables,
     };
-
-    
-    console.log(this.state.hostUrl)
-    axios.get('http://' + this.state.hostUrl + '/data/registrations')
+    axios.get(environmentVariables.dataUrl)
     .then(response => {
-      this.setState({registrations: response})
+      this.setState({registrations: response.data})
+      console.log(response.data)
       var registrationsArr = [];
-      Object.keys(this.state.registrations).forEach(function(key) {
-        registrationsArr.push(key);
+      
+      Object.keys(response.data).forEach(function(key) {
+        registrationsArr.push(response.data[key]);
       });
-      console.log(rowsArray)
-      var rowsArray = [registrationsArr]
+      var rowsArray = []
       for (var i = 0; i < registrationsArr.length; i++) {
         rowsArray.push(registrationsArr[i]);
       }
-      
       this.setState({rowsArray: rowsArray});
-
-      
-      console.log(rowsArray)
-      console.log(this.state.registrationsHtml)
      })
- 
-     
-    this.handleDelete = this.handleDelete.bind(this);
+     this.handleDelete = this.handleDelete.bind(this);
+     this.handleAddition = this.handleAddition.bind(this);
+     this.handleNameChange = this.handleNameChange.bind(this);
+     this.handleEmailChange = this.handleEmailChange.bind(this);
   }
 
-  handleDelete() {
+  handleDelete(index) {
     return `temp`
   }
-  handleAddition() {
+  handleAddition(obj) {
+    name = this.state.name
+    email = this.state.email
     return 'temp'
+  }
+  handleNameChange(event) {
+    this.setState({name: event.target.value});
+  }
+  handleEmailChange(event) {
+    this.setState({email: event.target.value});
   }
 
   render() {
     var handleDeleteFunc = this.handleDelete
-    var listItems = this.state.rowsArray.map(function(item, index) {
-      return (
-        <tr>
-          <td>{index+1}</td>
-          <td>{item.Name}</td>
-          <td>{item.emailAddress}</td>
-          <td><button onClick={handleDeleteFunc}>Delete</button></td>
-        </tr>
-      );
-    });
+    var handleAddFunc = this.handleAddition
+    var listItems = <tr></tr>
+    if(this.state.rowsArray.length > 0)
+    {
+      var listItems = this.state.rowsArray.map(function(item, index) {
+        return (
+          <tr>
+            <td>{index + 1}</td>
+            <td>{item.Name}</td>
+            <td>{item.emailAddress}</td>
+            <td><button onClick={()=>handleDeleteFunc(index + 1)}>Delete</button></td> 
+          </tr>
+        );
+      });
+    }
     return (
       <div>
-        <table>
-          <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Delete</th>
-          </tr>
-           {listItems}
-        </table>
+        <div class='table'>
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Delete</th>
+              </tr>
+            </thead>
+              <tbody>
+                {listItems}
+                <tr>
+                  <td>{this.state.rowsArray.length + 1}</td>
+                  <td><input type="text" id="Name" value={this.state.name} onChange={this.handleNameChange}/></td>
+                  <td><input type="text" id="Email" value={this.state.email} onChange={this.handleEmailChange}/></td>
+                  <td><button onClick={()=>handleAddFunc()}>Add</button></td>  
+                </tr>
+              </tbody>
+          </table>
+        </div>
       </div>
     );
   }

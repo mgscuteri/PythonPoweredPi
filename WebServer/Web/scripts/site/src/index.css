@@ -7,7 +7,9 @@ body {
 table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
-  width: 100%;
+  text-align:center;
+  margin: 0 auto;
+  width: 70%;
 }
 
 td, th {
@@ -15,3 +17,4 @@ td, th {
   text-align: left;
   padding: 8px;
 }
+
