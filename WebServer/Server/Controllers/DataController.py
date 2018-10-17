@@ -26,7 +26,7 @@ class DataController:
 
     async def addRegistration(self, request):
         dataBase = self._getRegistrationDataBase()
-        index = str(len(dataBase)+1)
+        index = self._getPrimaryKey(dataBase)
         postBody = await request.read()
         postBodyParsed = json.loads(postBody)
         newRow = {"Name":postBodyParsed["Name"], "emailAddress": postBodyParsed["emailAddress"] }
@@ -63,4 +63,14 @@ class DataController:
         dataBaseFile.close()
         return dataBase
     
-    
+    def _getPrimaryKey(self, database):
+        index = str(len(database)+1)
+        indexAlreadyInUse = True
+        while(indexAlreadyInUse):
+            if(index in database):
+                index = str(int(index)+1)
+            else:
+                indexAlreadyInUse = False
+        return index
+
+        

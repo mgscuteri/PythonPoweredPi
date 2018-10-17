@@ -9,7 +9,7 @@ table {
   border-collapse: collapse;
   text-align:center;
   margin: 0 auto;
-  width: 70%;
+  width: 60%;
 }
 
 td, th {
@@ -18,3 +18,12 @@ td, th {
   padding: 8px;
 }
 
+input[type=text], select {
+  width: 100%;
+  padding: 6px 3px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}

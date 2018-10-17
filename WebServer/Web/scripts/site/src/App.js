@@ -143,7 +143,7 @@ class DisplayRegistrations extends React.Component {
             <td>{item.key}</td>
             <td>{item.Name}</td>
             <td>{item.emailAddress}</td>
-            <td><button onClick={()=>handleDeleteFunc(item.key)}>Delete</button></td> 
+            <td><button className='button1' onClick={()=>handleDeleteFunc(item.key)}>Delete</button></td> 
           </tr>
         );
       });
@@ -163,10 +163,10 @@ class DisplayRegistrations extends React.Component {
               <tbody>
                 {listItems}
                 <tr>
-                  <td>{this.state.nextId}</td>
+                  <td></td>
                   <td><input type="text" id="Name" value={this.state.name} onChange={this.handleNameChange}/></td>
                   <td><input type="text" id="Email" value={this.state.email} onChange={this.handleEmailChange}/></td>
-                  <td><button onClick={()=>handleAddFunc()}>Add</button></td>
+                  <td><button className='button2' onClick={()=>handleAddFunc()}>  Add  </button></td>
                 </tr>
               </tbody>
           </table>
