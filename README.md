@@ -1,7 +1,7 @@
 # PythonPoweredPi
 Python server serving static content and REST API from a Raspberry Pi
 
-Roadmap:
+Roadmap:  
 ☑ Python Static Content Server  
 ☑ Python Rest API Server  
 ☑ React Frontend  
