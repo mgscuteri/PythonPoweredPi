@@ -2,7 +2,7 @@
 Python server serving static content and REST API from a Raspberry Pi
 
 Roadmap:  
-[x] Python Static Content Server  
+☑ Python Static Content Server  
 ☑ Python Rest API Server  
 ☑ React Frontend / build pipeline  
 ☑ Implement Webpack dev server and rest api proxy for local dev
