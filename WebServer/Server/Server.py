@@ -3,6 +3,7 @@ import _thread
 import http.server
 import socketserver
 import os
+import os.path
 import sys
 import time
 import random
@@ -16,6 +17,9 @@ from Controllers.DataController import DataController
 def LaunchServer():
     print("Launching REST Server")
     currentDirectory = os.getcwd()
+    currentDirectory = os.path.abspath(os.path.join(currentDirectory, os.pardir))
+    currentDirectory = os.path.abspath(os.path.join(currentDirectory, os.pardir))
+    print(currentDirectory)
     app = web.Application()
     #Instantiate HTTP Controllers 
     app_server = StaticContentController(app, currentDirectory)

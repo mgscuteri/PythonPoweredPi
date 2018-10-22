@@ -28,7 +28,7 @@ class DataController:
         dataBase = self._getRegistrationDataBase()
         index = self._getPrimaryKey(dataBase)
         postBody = await request.read()
-        postBodyParsed = json.loads(postBody)
+        postBodyParsed = json.loads(postBody.decode('utf-8'))
         newRow = {"Name":postBodyParsed["Name"], "emailAddress": postBodyParsed["emailAddress"] }
         dataBase[index] = newRow
         dePickledDataBase = open(self.currentDirectory + '/WebServer/Server/Data/dataBase.txt', 'wb')
