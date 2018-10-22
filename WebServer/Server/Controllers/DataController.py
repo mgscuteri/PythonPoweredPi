@@ -44,7 +44,7 @@ class DataController:
     def getRegistrationById(self, request):
         dataBase = self._getRegistrationDataBase()
         requestedId = (request.match_info['id'])
-        return dataBase[requestedId]
+        return web.json_response(dataBase[requestedId])
 
     def deleteRegistrationById(self, request):
         dataBase = self._getRegistrationDataBase()
@@ -64,7 +64,7 @@ class DataController:
         return dataBase
     
     def _getPrimaryKey(self, database):
-        index = str(len(database)+1)
+        index = str(int(list(database.keys())[len(database)-1])+1)
         indexAlreadyInUse = True
         while(indexAlreadyInUse):
             if(index in database):

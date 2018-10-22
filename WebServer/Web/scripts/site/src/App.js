@@ -20,11 +20,34 @@ class App extends Component {
         </div>
         <div className="appBody">
           <p className="App-intro">
-            This is a test website, built to test python's "pickler" I/O performance limits when hosted on a rasberry pi 3.
+            Hi, welcome to my website. I built this site from the ground up to demonstrate the feasibility of hosting a website on your own personal hardware in 2018. At the moment, this is being hosted on an old laptop of mine in my living room. The table below, is there to simply demonstrate data persistence. Feel free to add or delete records from it. They will be written to/from disk. 
+            <br/>
+            <div>
+              <DisplayRegistrations/>
+            </div>
+            <br/>
+            Here is a brief overview of the technologies being used here:
+            <ul>
+              <li>Python</li>
+                <ul>
+                  <li>Serves Static Files</li>
+                  <li>Serves Rest API </li>
+                  <li><a href="https://aiohttp.readthedocs.io/en/stable/">Aiohttp </a> used for HTTP handling </li>
+                </ul>
+              <li>Javascript
+                <ul>
+                  <li><a href="https://www.npmjs.com/">Node Package Manager </a></li> 
+                  <li><a href="https://reactjs.org/">React </a></li>
+                  <li><a href="https://webpack.js.org/">Webpack</a> (Bundler and Dev Server) </li>
+                  <li><a href="https://webpack.js.org/">Axios</a> used for making REST calls </li>
+                </ul>
+              </li>
+              <li>Routing/DNS</li>
+                <ul>
+                    <li><a href="https://www.noip.com/">Noip</a> DNS registration and dynamic DNS servicing </li> 
+                </ul>
+            </ul>
           </p>
-          <div>
-            <DisplayRegistrations/>
-          </div>
         </div>
       </div>
     );
@@ -143,7 +166,7 @@ class DisplayRegistrations extends React.Component {
             <td>{item.key}</td>
             <td>{item.Name}</td>
             <td>{item.emailAddress}</td>
-            <td><button className='button1' onClick={()=>handleDeleteFunc(item.key)}>Delete</button></td> 
+            <td className='right'><button className='button1' onClick={()=>handleDeleteFunc(item.key)}>Delete</button></td> 
           </tr>
         );
       });
@@ -157,7 +180,7 @@ class DisplayRegistrations extends React.Component {
                 <th>ID</th>
                 <th>Name</th>
                 <th>Email</th>
-                <th>Delete</th>
+                <th>Action</th>
               </tr>
             </thead>
               <tbody>
@@ -166,7 +189,7 @@ class DisplayRegistrations extends React.Component {
                   <td></td>
                   <td><input type="text" id="Name" value={this.state.name} onChange={this.handleNameChange}/></td>
                   <td><input type="text" id="Email" value={this.state.email} onChange={this.handleEmailChange}/></td>
-                  <td><button className='button2' onClick={()=>handleAddFunc()}>  Add  </button></td>
+                  <td className='right' ><button className='button2' onClick={()=>handleAddFunc()}>  Add  </button></td>
                 </tr>
               </tbody>
           </table>

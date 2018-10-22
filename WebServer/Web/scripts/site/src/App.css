@@ -13,7 +13,7 @@
 
 .appBody {
   background-color: #bad5ff;
-  height: 650px;
+  height: 1000px;
 }
 
 .header {
@@ -25,12 +25,16 @@
 
 .App-title {
   font-size: 1.5em;
+  margin: 10px;
 }
 
 .App-intro {
   margin: 0px;
   padding: 15px;
-  font-size: large;
+}
+
+.right {
+  text-align: right;
 }
 
 .button2 {
