@@ -20,7 +20,9 @@ class App extends Component {
         </div>
         <div className="appBody">
           <p className="App-intro">
-            Hi, welcome to my website. I built this site from the ground up to demonstrate the feasibility of hosting a website on your own personal hardware in 2018. At the moment, this is being hosted on an old laptop of mine in my living room. The table below, is there to simply demonstrate data persistence. Feel free to add or delete records from it. They will be written to/from disk. 
+            Hi, welcome to my website. I built this site from the ground up to demonstrate the feasibility of hosting a website on your own personal hardware in 2018. In a world of expensive managed hosting solutions where everything is AWS this, Azure that - this website is being hosted on a $37 rasberry pi sitting underneath my desk.
+            <br/>
+            The table below serves no real purpose. (Yet!) It is there simply to demonstrate data persistence. Feel free to add or delete records to it. They will be written to/from disk. 
             <br/>
             <div>
               <DisplayRegistrations/>
