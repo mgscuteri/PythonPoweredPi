@@ -6,7 +6,7 @@ Roadmap:
 ☑ Python Rest API Server  
 ☑ React Frontend / build pipeline  
 ☑ Implement Webpack dev server and rest api proxy for local dev  
-☐ Host on Raspberry Pi 3  
+☑ Host on Raspberry Pi 3  
 ☐ Implement Continuous Integration  
 ☐ Implement Manager/repository pattern  
 ☐ Move to postgress  
