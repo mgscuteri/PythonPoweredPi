@@ -1,25 +1,7 @@
-echo "updating apt-get"
-sudo apt-get update
-read -p "Press [Enter] key to start continue..."
+
 
 echo "installing xrdp"
-sudo apt install -y xrdp
-echo "mate-session" > ~/.xsession
-read -p "Press [Enter] key to start continue..."
-
-echo "uninstall existing python versions"
-echo Y | sudo apt remove python
-echo Y | sudo apt remove python3
-read -p "Press [Enter] key to start continue..."
-
-echo "installing python"
-sudo apt-get install python3.7
-python3 --version
-read -p "Press [Enter] key to start continue..."
-
-echo "installing node"
-curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
-sudo apt-get install -y nodejs
+sudo apt-get install xrdp
 read -p "Press [Enter] key to start continue..."
 
 echo "installing jenkins"
@@ -29,3 +11,7 @@ sudo apt-get update
 sudo apt-get install jenkins -y
 read -p "Press [Enter] key to start continue..."
 
+echo "installing node"
+curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+sudo apt-get install -y nodejs
+read -p "Press [Enter] key to start continue..."
