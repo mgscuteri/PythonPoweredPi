@@ -27,6 +27,9 @@ class App extends Component {
             <br/>
             This just in, this site now supports continuous integration and deployment!
             <br/>
+            <br/>
+            (using jenkins)
+            <br/>
             <div>
               <DisplayRegistrations/>
             </div>
