@@ -3,6 +3,10 @@ echo "changing password"
 sudo passwd root
 read -p "Press [Enter] key to start continue..."
 
+echo "switching default python to 3.5"
+alias python="/usr/bin/python3.5"
+read -p "Press [Enter] key to start continue..."
+
 echo "updating already installed software"
 sudo apt-get update
 sudo apt-get upgrade
@@ -12,12 +16,12 @@ echo "installing git"
 sudo apt-get install git
 read -p "Press [Enter] key to start continue..."
 
-echo "installing pip"
-sudo apt-get install python-pip
+echo "installing pip3"
+sudo apt-get install python3-pip
 read -p "Press [Enter] key to start continue..."
 
 echo "install python dependencies"
-pip install aiohttp
+pip3 install aiohttp
 read -p "Press [Enter] key to start continue..."
 
 echo "installing xrdp"
