@@ -24,6 +24,9 @@ class App extends Component {
             <br/>
             The table below serves no real purpose. (Yet!) It is there simply to demonstrate data persistence. Feel free to add or delete records to it. They will be written to/from disk. 
             <br/>
+            <br/>
+            This just in, this site now supports continuous integration and deployment!
+            <br/>
             <div>
               <DisplayRegistrations/>
             </div>
