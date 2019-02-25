@@ -15,7 +15,7 @@ class App extends Component {
             <img src={pythonLogo} className="logo" alt="logo" />
             <img src={logo} className="App-logo" alt="logo" />
             <img src={piLogo} className="logo" alt="logo" />
-            <h1 className="App-title">Welcome to Michael Scuteri's Website</h1>
+            <h1 className="App-title">Welcome to Michael Scuteri&#39s Website</h1>
           </header>
         </div>
         <div className="appBody">
@@ -36,23 +36,33 @@ class App extends Component {
             <br/>
             Here is a brief overview of the technologies being used here:
             <ul>
-              <li>Python</li>
+               <li>Server</li>
                 <ul>
-                  <li>Serves Static Files</li>
-                  <li>Serves Rest API </li>
-                  <li><a href="https://aiohttp.readthedocs.io/en/stable/">Aiohttp </a> used for HTTP handling </li>
+                  <li><a href="https://www.raspberrypi.org/products/raspberry-pi-3-model-b/">Raspberry Pi 3</a> - Hosts this Application, as well as Jenkins </li>
+                  <li><a href="https://www.raspberrypi.org/downloads/raspbian/"> Raspbian Stretch Lite </a> - Operating System</li>
+                  <li><a href="https://circleci.com/migrate-jenkins-to-circleci/?utm_source=gnb&utm_medium=SEM&utm_campaign=SEM-gnb-400-Eng-ni&utm_content=SEM-gnb-400-Eng-ni-Jenkins&gclid=EAIaIQobChMI8ejf59fV4AIVxkSGCh0zDQ6MEAAYASAAEgLG9fD_BwE"> Jenkins </a> - Integrates with Github to orchestrate continuous integration and deployment</li>
                 </ul>
-              <li>Javascript
+              <li>Back-End</li>
                 <ul>
-                  <li><a href="https://www.npmjs.com/">Node Package Manager </a></li> 
-                  <li><a href="https://reactjs.org/">React </a></li>
-                  <li><a href="https://webpack.js.org/">Webpack</a> (Bundler and Dev Server) </li>
-                  <li><a href="https://webpack.js.org/">Axios</a> used for making REST calls </li>
+                  <li><a href="https://www.python.org/">Python3</a> - Serves static content and handles rest calls</li>
+                  <li><a href="https://aiohttp.readthedocs.io/en/stable/">Aiohttp </a> - used for HTTP handling </li>
+                </ul>
+              <li> Front-End
+                <ul>
+                  <li><a href="https://www.npmjs.com/">Node Package Manager </a> - Dependency Management</li> 
+                  <li><a href="https://reactjs.org/">React</a> - Javacript Framework</li>
+                  <li><a href="https://webpack.js.org/">Webpack</a> - Bundles HTML/Js/CSS and provides development server </li>
+                  <li><a href="https://webpack.js.org/">Axios</a> - Package used for making REST calls </li>
                 </ul>
               </li>
               <li>Routing/DNS</li>
                 <ul>
+                    <li><a href="https://www.tp-link.com/us/products/details/cat-9_Archer-C7.html">Tp-Link Archer C7</a> Port Forwarding and VPN Server</li> 
                     <li><a href="https://www.noip.com/">Noip</a> DNS registration and dynamic DNS servicing </li> 
+                </ul>
+              <li>Source Control</li>
+                <ul>
+                    <li><a href="https://github.com/mgscuteri/PythonPoweredPi">Github</a></li> 
                 </ul>
             </ul>
           </p>
