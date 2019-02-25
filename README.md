@@ -7,8 +7,8 @@ Roadmap:
 ☑ React Frontend    
 ☑ Host on Raspberry Pi 3
 ☑ Implement Continuous Integration/Deployment
-☐ Make the front end pretty.
-☐ Add a proper database solution.
-☐ Implement Authentication/User Sessions
-☐ Integrage with DoorBell project (https://github.com/mgscuteri/DoorBell)
+☐ Make the front end pretty.  
+☐ Add a proper database solution.  
+☐ Implement Authentication/User Sessions  
+☐ Integrage with DoorBell project (https://github.com/mgscuteri/DoorBell)  
 
