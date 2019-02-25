@@ -1,4 +1,5 @@
 body {
+  background-color: #D9CEFF;
   margin: 0;
   padding: 0;
   font-family: Futura, sans-serif;
@@ -11,12 +12,11 @@ table {
   border-collapse: collapse;
   text-align:center;
   margin: 0 auto;
-  margin-top: 15px;
   width: 60%;
 }
 
 td, th {
-  border-bottom: 1px solid #3c3fe0;
+  border-bottom: 1px solid #353BCC;
   font-size: 8;
   text-align: left;
   padding: 2px;
@@ -30,7 +30,7 @@ tr:hover {
 input[type=text], select {
   width: 100%;
   padding: 6px 3px;
-  margin: 8px 0;
+  margin: 0px 0;
   display: inline-block;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -41,4 +41,37 @@ p {
   text-align: left;
   padding-Left: 50px;
   padding-right: 50px;
+}
+
+
+ul.topnav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #2C33CC;
+}
+
+ul.topnav li {float: left;}
+
+ul.topnav li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding-left: 15px;
+  padding-right: 15px;
+  line-height: 60px;
+  text-decoration: none;
+  height: 60px;
+}
+
+ul.topnav li a:hover:not(.active) {background-color: #111;}
+
+ul.topnav li a.active {background-color: #66E333;}
+
+ul.topnav li.right {float: right;}
+
+@media screen and (max-width: 600px) {
+  ul.topnav li.right, 
+  ul.topnav li {float: none;}
 }
