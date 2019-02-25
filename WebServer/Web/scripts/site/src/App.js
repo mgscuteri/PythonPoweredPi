@@ -20,21 +20,15 @@ class App extends Component {
         </div>
         <div className="appBody">
           <p className="App-intro">
-            Hi, welcome to my website. I built this site from the ground up to demonstrate the feasibility of hosting a website on your own personal hardware in 2018. In a world of expensive managed hosting solutions where everything is AWS this, Azure that - this website is being hosted on a $37 rasberry pi sitting underneath my desk.
+            The year is 2019.  The world has all but given up on owning your own hardware.  “Hosting a website on your own hardware is too expensive!” They say.  In stark contrast to that sentiment, I humbly present the PythonPoweredPi, a webapp that utilizes some of the most modern web technologies, and is being 100% hosted on $35 worth of hardware.   
             <br/>
-            The table below serves no real purpose. (Yet!) It is there simply to demonstrate data persistence. Feel free to add or delete records to it. They will be written to/from disk. 
-            <br/>
-            <br/>
-            This just in, this site now supports continuous integration and deployment!
-            <br/>
-            <br/>
-            (jenkins)
+            The website is still a work in progress.  Below, is an arbitrary table that will write records to disc.  Below that, is a summary of the technologies being used.
             <br/>
             <div>
               <DisplayRegistrations/>
             </div>
             <br/>
-            Here is a brief overview of the technologies being used here:
+            Overview of technologies being used:
             <ul>
                <li>Server</li>
                 <ul>
