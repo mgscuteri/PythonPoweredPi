@@ -1,5 +1,5 @@
 # PythonPoweredPi
-Python server serving static content and REST API from a Raspberry Pi
+I'm building a web app, and I'm hosting it all on Raspberry Pi's. Why? I don't know. Build first, ask questions later.  That's what I always say. 
 
 Roadmap:  
 ☑ Python Static Content Server  
