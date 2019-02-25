@@ -1,7 +1,7 @@
 # PythonPoweredPi
 I'm building a web app, and I'm hosting it all on Raspberry Pi's. Why? I don't know. Build first, ask questions later.  That's what I always say. 
 
-Roadmap:  
+**Roadmap:**  
 ☑ Python Static Content Server  
 ☑ Python Rest API Server  
 ☑ React Frontend  
