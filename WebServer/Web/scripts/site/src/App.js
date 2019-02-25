@@ -12,10 +12,7 @@ class App extends Component {
       <div className="App">
         <div className="header">
           <header className="App-header">
-            <img src={pythonLogo} className="logo" alt="logo" />
-            <img src={logo} className="App-logo" alt="logo" />
-            <img src={piLogo} className="logo" alt="logo" />
-            <h1 className="App-title">Welcome to the Python Powered Pi!</h1>
+            <h1 className="App-title">Python Powered Pi</h1>
           </header>
         </div>
         <div className="appBody">
