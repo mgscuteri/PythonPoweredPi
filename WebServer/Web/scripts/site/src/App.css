@@ -5,7 +5,7 @@
 }
 
 .appBody {
-
+clear: both;
 }
 
 .header {
@@ -70,6 +70,7 @@
 .logo {
   margin: 0px; 
   padding-top: 0px;
+  padding-right: 10px;
   padding-bottom: 0px;
   line-height:0px;  
   min-width: 33px;
@@ -82,9 +83,9 @@
   margin: 0px; 
   padding-top: 0px;
   padding-bottom: 0px;
-  display: inline-block;
+  float: left;
   background-color: #2C33CC;
-  width: 95%;
+  width: auto;
 }
 
 .navBarContainer {
