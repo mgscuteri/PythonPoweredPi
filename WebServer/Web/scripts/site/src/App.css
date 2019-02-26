@@ -88,6 +88,12 @@ clear: both;
   width: auto;
 }
 
+@media screen and (max-width: 600px) {
+  .navbar {
+    width: 100%; 
+  }
+}
+
 .navBarContainer {
   margin: 0px; 
   padding-top: 0px;
