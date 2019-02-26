@@ -15,6 +15,12 @@ table {
   width: 60%;
 }
 
+h2 {
+  margin: 0px;
+  padding-top: 15px;
+}
+
+
 td, th {
   border-bottom: 1px solid #353BCC;
   font-size: 8;
@@ -39,6 +45,7 @@ input[type=text], select {
 
 p {
   text-align: left;
+  text-indent: 20px;
   padding-Left: 50px;
   padding-right: 50px;
 }
