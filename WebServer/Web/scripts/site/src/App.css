@@ -5,7 +5,9 @@
 }
 
 .appBody {
-clear: both;
+  clear: both;
+  width: 80%;
+  margin: auto;
 }
 
 .header {
