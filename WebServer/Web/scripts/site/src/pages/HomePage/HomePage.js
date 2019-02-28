@@ -16,7 +16,7 @@ class HomePage extends React.Component {
             
           </p>
           <p>
-            The website is still a work in progress.  Below, is an arbitrary table that will write records to disc.  Below that, is a summary of the technologies being used.
+            The website is still a work in progress.  Below, is an arbitrary table that will write records to disk.  Below that, is a summary of the technologies being used.
           </p>
           <br/>
         </div>
