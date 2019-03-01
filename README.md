@@ -9,6 +9,7 @@ I'm building a web app, and I'm hosting it all on Raspberry Pi's. Why? I don't k
 ☑ Implement Continuous Integration/Deployment  
 ☐ Make the front end pretty.  
 ☐ Add a proper database solution.  
+☐ Implement HTTPS/SSL (w/Lets Encrypt).  
 ☐ Implement Authentication/User Sessions  
 ☐ Integrage with DoorBell project (https://github.com/mgscuteri/DoorBell)  
 
