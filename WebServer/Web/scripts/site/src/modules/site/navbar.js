@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import piLogo from '../../images/piLogoSmall.png';
+import ReactDOM from 'react-dom'
+import { Route, Link, BrowserRouter as Router } from 'react-router-dom'
 
 class Navbar extends React.Component {  
     constructor(props) {
@@ -9,16 +11,20 @@ class Navbar extends React.Component {
     render() {
       return (
         <div class="navBarContainer">
-            <div className="logo">
-                <a class="active" href="#home"><img src={piLogo} alt="logo"/></a>
-            </div>
-            <div class="navbar">
-                <ul class="topnav">
-                    <li><a class="active" href="#home">Home</a></li>
-                    <li><a href="#news">ThemeSongs</a></li>
-                    <li class="right"><a href="#about">About</a></li>
-                </ul>
-            </div>
+          
+              <div className="logo">
+                  <a class="active" href="#home"><img src={piLogo} alt="logo"/></a>
+              </div>
+              <div class="navbar">
+                <Router>
+                  <ul class="topnav">
+                      <li><Link to="/">Home</Link></li>
+                      <li><Link to="/ThemeSongs">ThemeSongs</Link></li>
+                      <li class="right"><Link to="/About">About</Link></li>
+                  </ul>
+                </Router>
+              </div>
+            
         </div>
       );
     }
