@@ -1,13 +1,40 @@
 .App {
-  text-align: center;
-  margin: 0px;
-  padding: 0px;
+
 }
 
 .appBody {
   clear: both;
-  width: 90%;
+  width: 100%;
   margin: auto;
+  text-align: center;
+  margin: 0px;
+  padding: 0px;
+  min-height: 300px;
+  
+  color: #fff;
+	background: linear-gradient(-45deg, #23A6D5, #23D5AB, #ffc942, #EE7752);
+	background-size: 400% 400%;
+	-webkit-animation: Gradient 15s ease infinite;
+	-moz-animation: Gradient 15s ease infinite;
+	animation: Gradient 15s ease infinite;
+}
+
+@-webkit-keyframes Gradient {
+	0% { background-position: 0% 50%}
+	50% { background-position: 100% 50%	}
+	100% { background-position: 0% 50% }
+}
+
+@-moz-keyframes Gradient {
+	0% { background-position: 0% 50% }
+	50% { background-position: 100% 50% }
+	100% { background-position: 0% 50% }
+}
+
+@keyframes Gradient {
+	0% { background-position: 0% 50%	}
+	50% {	background-position: 100% 50%	}
+	100% { background-position: 0% 50%}
 }
 
 .header {
@@ -80,6 +107,13 @@
   padding-left: 10px;  
 }
 
+.footer {
+  color: #fff;
+  padding: 10px;
+  font-family: Futura, sans-serif;
+  font-size: 11px;
+}
+
 .navbar {
   font-family: Futura, sans-serif;
   font-weight: bold;
@@ -102,30 +136,22 @@
   padding-bottom: 0px;
   width: 100%;
   height: 60px;
-  background-color: #2C33CC;
+}
 
-  background: linear-gradient(130deg, #06b5f0, #49e1f6);
-  background-size: 400% 400%;
-  
-  -webkit-animation: AnimationName 0s ease infinite;
-  -moz-animation: AnimationName 0s ease infinite;
-  animation: AnimationName 0s ease infinite;
-  
-  @-webkit-keyframes AnimationName {
-      0%{background-position:0% 15%}
-      50%{background-position:100% 86%}
-      100%{background-position:0% 15%}
-  }
-  @-moz-keyframes AnimationName {
-      0%{background-position:0% 15%}
-      50%{background-position:100% 86%}
-      100%{background-position:0% 15%}
-  }
-  @keyframes AnimationName { 
-      0%{background-position:0% 15%}
-      50%{background-position:100% 86%}
-      100%{background-position:0% 15%}
-  }
+@-webkit-keyframes NavBarGrad {
+  0%{background-position:0% 15%}
+  50%{background-position:100% 86%}
+  100%{background-position:0% 15%}
+}
+@-moz-keyframes NavBarGrad {
+  0%{background-position:0% 15%}
+  50%{background-position:100% 86%}
+  100%{background-position:0% 15%}
+}
+@keyframes NavBarGrad { 
+  0%{background-position:0% 15%}
+  50%{background-position:100% 86%}
+  100%{background-position:0% 15%}
 }
 
 @keyframes App-logo-spin {

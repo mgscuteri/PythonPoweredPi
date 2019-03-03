@@ -3,6 +3,29 @@ html {
   padding: 0px;
   margin: 0px;
   
+  background: linear-gradient(130deg, #06b5f0, #49e1f6);
+  background-size: 400% 400%;
+  
+  -webkit-animation: NavBarGrad 0s ease infinite;
+  -moz-animation: NavBarGrad 0s ease infinite;
+  animation: NavBarGrad 0s ease infinite;
+  
+}
+
+@-webkit-keyframes NavBarGrad {
+  0%{background-position:0% 15%}
+  50%{background-position:100% 86%}
+  100%{background-position:0% 15%}
+}
+@-moz-keyframes NavBarGrad {
+  0%{background-position:0% 15%}
+  50%{background-position:100% 86%}
+  100%{background-position:0% 15%}
+}
+@keyframes NavBarGrad { 
+  0%{background-position:0% 15%}
+  50%{background-position:100% 86%}
+  100%{background-position:0% 15%}
 }
 
 body {
@@ -10,32 +33,9 @@ body {
   padding: 0;
   font-size: 12;
   font-family: Futura, sans-serif;
-  
-	color: #fff;
-	background: linear-gradient(-45deg, #23A6D5, #23D5AB, #ffc942, #EE7752);
-	background-size: 400% 400%;
-	-webkit-animation: Gradient 15s ease infinite;
-	-moz-animation: Gradient 15s ease infinite;
-	animation: Gradient 15s ease infinite;
+  height: 100%;
 }
 
-@-webkit-keyframes Gradient {
-	0% { background-position: 0% 50%}
-	50% { background-position: 100% 50%	}
-	100% { background-position: 0% 50% }
-}
-
-@-moz-keyframes Gradient {
-	0% { background-position: 0% 50% }
-	50% { background-position: 100% 50% }
-	100% { background-position: 0% 50% }
-}
-
-@keyframes Gradient {
-	0% { background-position: 0% 50%	}
-	50% {	background-position: 100% 50%	}
-	100% { background-position: 0% 50%}
-}
 
 table {
   font-family: arial, sans-serif;
