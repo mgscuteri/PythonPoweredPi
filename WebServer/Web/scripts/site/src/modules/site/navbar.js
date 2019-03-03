@@ -25,16 +25,16 @@ class Navbar extends React.Component {
                 <div class="navbar">
                   <ul class="topnav">
                     <li><Link to="/">Home</Link></li>
-                    <li><Link to="/a/ThemeSongs">ThemeSongs</Link></li>
-                    <li class="right"><Link to="/a/About">About</Link></li>
+                    <li><Link to="/ThemeSongs">ThemeSongs</Link></li>
+                    <li class="right"><Link to="/About">About</Link></li>
                   </ul>
                 </div>
               </div>
               <div className="appBody">
                 <Switch>
                   <Route exact path="/" component={HomePage} />
-                  <Route path="/a/ThemeSongs" component={ThemeSongs} />
-                  <Route path="/a/About" component={TechOverview} />
+                  <Route path="/ThemeSongs" component={ThemeSongs} />
+                  <Route path="/About" component={TechOverview} />
                   <Route render={ () => <h1>404 Error</h1> } />
                 </Switch>
               </div>

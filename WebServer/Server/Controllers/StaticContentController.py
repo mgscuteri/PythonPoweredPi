@@ -17,6 +17,8 @@ class StaticContentController:
         self.currentDirectory = currentDirectory
         self.reactBuildLocation = currentDirectory + '/WebServer/Web/scripts/site/build/'
         app.router.add_route('GET', '/', self.getHomePage)
+        app.router.add_route('GET', '/ThemeSongs', self.getHomePage)
+        app.router.add_route('GET', '/About', self.getHomePage)
         app.router.add_route('GET', '/service-worker.js', self.getJsServiceWorker)
         app.router.add_route('*', '/static/css/{cssFileName}', self.getCss)
         app.router.add_route('*', '/static/js/{jsFileName}', self.getJs)
