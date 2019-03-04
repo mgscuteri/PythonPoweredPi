@@ -8,8 +8,13 @@ class TechOverview extends React.Component {
     render() {
       return (
          <p className="App-intro">
-            <br/>
-            Overview of technologies being used:
+            <h2>
+              About
+            </h2>
+            <p>
+             Below is an overview of the technologies being used by this website, and the server it runs on. 
+            </p>
+
             <ul>
               <li>Server</li>
                 <ul>

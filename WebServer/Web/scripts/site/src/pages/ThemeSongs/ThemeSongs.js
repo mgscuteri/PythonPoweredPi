@@ -119,31 +119,35 @@ class ThemeSongs extends React.Component {
         });
       }
       return (
-        <p className="App-intro">
           <div>
-            <div>
-              <table>
-                <thead>
+            <h2>
+              ThemeSongs
+            </h2>
+            <p>
+              This area is still under construction.  Currently, it serves to demo database writes with responsive design.  Eventually, I plan to use this page in order to store ThemeSongs for users of the DoorBell app. (https://github.com/mgscuteri/DoorBell)
+            </p>
+      
+            <table>
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+                <tbody>
+                  {listItems}
                   <tr>
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Action</th>
+                    <td></td>
+                    <td><input type="text" id="Name" value={this.state.name} onChange={this.handleNameChange}/></td>
+                    <td><input type="text" id="Email" value={this.state.email} onChange={this.handleEmailChange}/></td>
+                    <td className='right' ><button className='button2' onClick={()=>handleAddFunc()}>  Add  </button></td>
                   </tr>
-                </thead>
-                  <tbody>
-                    {listItems}
-                    <tr>
-                      <td></td>
-                      <td><input type="text" id="Name" value={this.state.name} onChange={this.handleNameChange}/></td>
-                      <td><input type="text" id="Email" value={this.state.email} onChange={this.handleEmailChange}/></td>
-                      <td className='right' ><button className='button2' onClick={()=>handleAddFunc()}>  Add  </button></td>
-                    </tr>
-                  </tbody>
-              </table>
-            </div>
+                </tbody>
+            </table>
           </div>
-        </p>
+        
       );
     }
   }
