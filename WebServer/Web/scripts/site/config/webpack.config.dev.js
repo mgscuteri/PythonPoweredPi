@@ -268,6 +268,7 @@ module.exports = {
     },
     ///contentBase: '/WebServer/Web/scripts/site/build/',
     port: 3000,
+    historyApiFallback:true,
     // Send API requests on localhost to API server get around CORS.
     proxy: {
        '/data': {
