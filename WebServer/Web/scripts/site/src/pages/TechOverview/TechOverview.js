@@ -7,7 +7,7 @@ class TechOverview extends React.Component {
 
     render() {
       return (
-         <p className="App-intro">
+         <p>
             <h2>
               About
             </h2>
