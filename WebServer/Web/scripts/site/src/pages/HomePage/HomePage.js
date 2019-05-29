@@ -9,7 +9,7 @@ class HomePage extends React.Component {
       return (
         <div>
           <h2>
-            Welcome to the PythonPoweredPi!
+            Welcome to the Awesome PythonPoweredPi!
           </h2>
           <p>
             The year is 2019.  The world has all but given up on owning your own hardware.  “Hosting a website on your own hardware is too expensive!” they say.  In stark contrast to that sentiment, I humbly present the PythonPoweredPi, a webapp that utilizes some of the most modern web technologies, and is being 100% hosted on $35 worth of hardware.   
