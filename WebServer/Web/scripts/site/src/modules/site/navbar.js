@@ -8,6 +8,7 @@ import ThemeSongs from '../../pages/DiskTest/DiskTest.js'
 import HomePage from '../../pages/HomePage/HomePage.js'
 import TechOverview from '../../pages/TechOverview/TechOverview.js';
 import LogIn from '../../pages/TheServer/TheServer.js';
+import TheServer from '../../pages/TheServer/TheServer.js';
 
 
 class Navbar extends React.Component {  
@@ -24,7 +25,7 @@ class Navbar extends React.Component {
                   <ul class="topnav">
                     <li><Link to="/"><img src={piLogo} alt="logo"/></Link></li>
                     <li class="topnav"><Link to="/">Home</Link></li>
-                    <li class="topnav, right"><Link to="/LogIn">The Server</Link></li>
+                    <li class="topnav, right"><Link to="/TheServer">The Server</Link></li>
                     <li class="topnav"><Link to="/ThemeSongs">ThemeSongs</Link></li>
                     <li class="topnav"><Link to="/About">About</Link></li>
                   </ul>
@@ -33,7 +34,7 @@ class Navbar extends React.Component {
               <div className="appBody">
                 <Switch>
                   <Route exact path="/" component={HomePage} />
-                  <Route path="/LogIn" component={LogIn} />
+                  <Route path="/TheServer" component={TheServer} />
                   <Route path="/ThemeSongs" component={ThemeSongs} />
                   <Route path="/About" component={TechOverview} />
                   <Route render={ () => <h1>404 Error</h1> } />
