@@ -12,14 +12,15 @@ class HomePage extends React.Component {
             Welcome to Mike Scuteri's PythonPoweredPi!
           </h2>
           <p>
-            The year is 2020.  The world has all but given up on owning your own hardware.  “Hosting a website on your own hardware is too expensive!” they say.  In stark contrast to that sentiment, I humbly present the PythonPoweredPi, a webapp that utilizes some of the most modern web technologies, and is being 100% hosted on $35 worth of hardware.   
-            
-          </p>
-          <p>
-            The website is still a work in progress.  Below, is an arbitrary table that will write records to disk.  Below that, is a summary of the technologies being used.
+            I'm Michael Scuteri. Welcome to my website.  I built this website for no particular reason other then I am a Software Engineer, and I felt like I should have my own website.  This site does not take advantage of any SAS providers. It is entirely custom built, coded, deployed, and maintened.. It has no recurring costs, and it is hosted on $35 worth of hardware.
           </p>
           <br/>
+          See the source code for this technology demostrator here: 
+          <br/>
+          <a href="https://github.com/mgscuteri/PythonPoweredPi">https://github.com/mgscuteri/PythonPoweredPi</a>
+        
         </div>
+        
       );
     }
   }

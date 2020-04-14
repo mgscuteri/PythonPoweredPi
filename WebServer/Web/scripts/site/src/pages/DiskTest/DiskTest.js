@@ -124,7 +124,7 @@ class ThemeSongs extends React.Component {
               ThemeSongs
             </h2>
             <p>
-              This area is still under construction.  Currently, it serves to demo database writes with responsive design.  Eventually, I plan to use this page in order to store ThemeSongs for users of the DoorBell app. (https://github.com/mgscuteri/DoorBell)
+              The page serves to demonstrate read and writes to disk. Any values added here will be stored, and retrieved from the SD card on the Raspberry PI. 
             </p>
       
             <table>

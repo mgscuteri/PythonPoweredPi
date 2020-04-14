@@ -4,10 +4,10 @@ import ReactDOM from 'react-dom'
 import { Route, Link, BrowserRouter as Router } from 'react-router-dom'
 import { Switch } from 'react-router-dom';
 
-import ThemeSongs from '../../pages/ThemeSongs/ThemeSongs.js'
+import ThemeSongs from '../../pages/DiskTest/DiskTest.js'
 import HomePage from '../../pages/HomePage/HomePage.js'
 import TechOverview from '../../pages/TechOverview/TechOverview.js';
-import LogIn from '../../pages/LogIn/LogIn.js';
+import LogIn from '../../pages/TheServer/TheServer.js';
 
 
 class Navbar extends React.Component {  
@@ -24,7 +24,7 @@ class Navbar extends React.Component {
                   <ul class="topnav">
                     <li><Link to="/"><img src={piLogo} alt="logo"/></Link></li>
                     <li class="topnav"><Link to="/">Home</Link></li>
-                    <li class="topnav, right"><Link to="/LogIn">Log In</Link></li>
+                    <li class="topnav, right"><Link to="/LogIn">The Server</Link></li>
                     <li class="topnav"><Link to="/ThemeSongs">ThemeSongs</Link></li>
                     <li class="topnav"><Link to="/About">About</Link></li>
                   </ul>
