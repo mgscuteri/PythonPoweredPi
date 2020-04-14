@@ -121,7 +121,7 @@ class ThemeSongs extends React.Component {
       return (
           <div>
             <h2>
-              ThemeSongs
+              Email List
             </h2>
             <p>
               The page serves to demonstrate read and writes to disk. Any values added here will be stored, and retrieved from the SD card on the Raspberry PI. 
