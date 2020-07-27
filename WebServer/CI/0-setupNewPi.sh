@@ -12,6 +12,7 @@ sudo apt-get install jenkins -y
 read -p "Press [Enter] key to start continue..."
 
 echo "installing node"
-curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
-sudo apt-get install -y nodejs
+sudo apt update
+sudo apt install build-essential checkinstall libssl-dev
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
 read -p "Press [Enter] key to start continue..."
