@@ -15,26 +15,18 @@ class StaticContentController:
     def __init__(self, app, currentDirectory):
         self.app = app
         self.currentDirectory = currentDirectory
-        self.reactBuildLocation = currentDirectory + '/WebServer/Web/scripts/site/build/'
+        self.reactBuildLocation = currentDirectory + '/WebServer/Web/scripts/site/dist/'
         app.router.add_route('GET', '/', self.getHomePage)
+        app.router.add_route('GET', '/index_bundle.js', self.getJsBundle)
+        app.router.add_route('*', '/media/{mediaFileName}', self.getMedia)
         app.router.add_route('GET', '/TheServer', self.getHomePage)
         app.router.add_route('GET', '/EmailList', self.getHomePage)
         app.router.add_route('GET', '/About', self.getHomePage)
-        app.router.add_route('GET', '/service-worker.js', self.getJsServiceWorker)
-        app.router.add_route('*', '/static/css/{cssFileName}', self.getCss)
-        app.router.add_route('*', '/static/js/{jsFileName}', self.getJs)
-        app.router.add_route('*', '/static/media/{mediaFileName}', self.getMedia)
-
+        
     def getHomePage(self, request):
         return web.FileResponse(self.reactBuildLocation +'index.html')
-    def getJsServiceWorker(self, request):
-        return web.FileResponse(self.reactBuildLocation +'service-worker.js')
-    def getJs(self, request):
-        jsFilePath = self.reactBuildLocation + '/static/js/{}'.format(request.match_info['jsFileName'])
-        return web.FileResponse(jsFilePath)
-    def getCss(self, request):
-        cssFilePath = self.reactBuildLocation + '/static/css/{}'.format(request.match_info['cssFileName'])
-        return web.FileResponse(cssFilePath)
+    def getJsBundle(self, request):
+        return web.FileResponse(self.reactBuildLocation +'index_bundle.js')
     def getMedia(self, request):
-        mediaFilePath = self.reactBuildLocation + '/static/media/{}'.format(request.match_info['mediaFileName'])
+        mediaFilePath = self.reactBuildLocation + '/media/{}'.format(request.match_info['mediaFileName'])
         return web.FileResponse(mediaFilePath)

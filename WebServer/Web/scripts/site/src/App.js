@@ -6,8 +6,6 @@ import './App.css';
 import Navbar from './modules/site/navbar.js'
 import Footer from './modules/site/footer.js'
 
-
-
 class App extends Component {
   render() {
     return (
@@ -18,6 +16,8 @@ class App extends Component {
     );
   }
 }
+
+ReactDOM.render(<App />, document.getElementById('app'))
 
 
 export default App;
